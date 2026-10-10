@@ -28,20 +28,15 @@ import { authClient } from "@/lib/auth-client";
 
 const formSchema = z
   .object({
-    name: z.string("Nome inválido.").trim().min(1, "Nome é obrigatório."),
-    email: z.email("E-mail inválido."),
-    password: z.string("Senha inválida.").min(8, "Senha inválida."),
-    passwordConfirmation: z.string("Senha inválida.").min(8, "Senha inválida."),
+    name: z.string().trim().min(1, "Nome é obrigatório."),
+    email: z.string().email("E-mail inválido."),
+    password: z.string().min(8, "Senha inválida."),
+    passwordConfirmation: z.string().min(8, "Senha inválida."),
   })
-  .refine(
-    (data) => {
-      return data.password === data.passwordConfirmation;
-    },
-    {
-      error: "As senhas não coincidem.",
-      path: ["passwordConfirmation"],
-    },
-  );
+  .refine((data) => data.password === data.passwordConfirmation, {
+    message: "As senhas não coincidem.",
+    path: ["passwordConfirmation"],
+  });
 
 type FormValues = z.infer<typeof formSchema>;
 

@@ -27,8 +27,8 @@ import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
 
 const formSchema = z.object({
-  email: z.email("E-mail inválido!"),
-  password: z.string("Senha inválida!").min(8, "Senha inválida!"),
+  email: z.string().email("E-mail inválido!"),
+  password: z.string().min(8, "Senha inválida!"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
