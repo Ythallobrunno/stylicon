@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 
 import { productTable, productVariantTable } from "@/db/schema";
 
