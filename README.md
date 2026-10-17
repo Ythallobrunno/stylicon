@@ -1,6 +1,6 @@
 # Stylicon 🛍️
 
-Um e-commerce moderno e responsivo de vestuário, desenvolvido com foco em performance e experiência do usuário (UX). Este projeto foi construído durante um bootcamp prático para consolidar conceitos avançados de desenvolvimento frontend.
+Um e-commerce moderno e responsivo de vestuário, desenvolvido com foco em performance e experiência do usuário (UX).
 
 ## 🚀 Tecnologias Utilizadas
 
