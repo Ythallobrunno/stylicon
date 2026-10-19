@@ -13,12 +13,15 @@ interface ProductItemProps {
 }
 
 const ProductItem = ({ product, textContainerClassName }: ProductItemProps) => {
-  const firtsVariant = product.variants[0];
+  const firstVariant = product.variants[0];
   return (
-    <Link href="/" className="flex flex-col gap-4">
+    <Link
+      href={`/product-variant/${firstVariant.slug}`}
+      className="flex flex-col gap-4"
+    >
       <Image
-        src={firtsVariant.imageUrl}
-        alt={firtsVariant.name}
+        src={firstVariant.imageUrl}
+        alt={firstVariant.name}
         sizes="100vw"
         width={0}
         height={0}
@@ -35,7 +38,7 @@ const ProductItem = ({ product, textContainerClassName }: ProductItemProps) => {
           {product.description}
         </p>
         <p className="truncate text-sm font-semibold">
-          {formatCentsToBRL(firtsVariant.priceInCents)}
+          {formatCentsToBRL(firstVariant.priceInCents)}
         </p>
       </div>
     </Link>
