@@ -129,6 +129,7 @@ const Addresses = ({
           <RadioGroup
             value={selectedAddress}
             onValueChange={setSelectedAddress}
+            className="gap-3"
           >
             {addresses?.length === 0 && (
               <div className="py-4 text-center">
@@ -140,11 +141,18 @@ const Addresses = ({
 
             {addresses?.map((address) => (
               <Card key={address.id}>
-                <CardContent>
+                <CardContent className="p-4">
                   <div className="flex items-start space-x-2">
-                    <RadioGroupItem value={address.id} id={address.id} />
+                    <RadioGroupItem
+                      value={address.id}
+                      id={address.id}
+                      className="mt-0.5"
+                    />
                     <div className="flex-1">
-                      <Label htmlFor={address.id} className="cursor-pointer">
+                      <Label
+                        htmlFor={address.id}
+                        className="cursor-pointer font-normal leading-relaxed"
+                      >
                         <div>
                           <p className="text-sm">{formatAddress(address)}</p>
                         </div>
@@ -156,10 +164,15 @@ const Addresses = ({
             ))}
 
             <Card>
-              <CardContent>
+              <CardContent className="p-4">
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="add_new" id="add_new" />
-                  <Label htmlFor="add_new">Adicionar novo endereço</Label>
+                  <Label
+                    htmlFor="add_new"
+                    className="cursor-pointer font-normal"
+                  >
+                    Adicionar novo endereço
+                  </Label>
                 </div>
               </CardContent>
             </Card>
